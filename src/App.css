@@ -1,38 +1,135 @@
-.App {
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 30px;
   text-align: center;
+  background-color: black;
+  color: #fff;
+  font-size: large;
+  bottom: 0;
+  padding-top: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3{
+  margin-left: 5%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-button{
+  margin-left: 80%;
+  padding: 0px 1%;
+  color: white;
+  border-color: blue;
+  border-radius: 5px;
+  background-color: blue;
+  width: 20%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.download-button{
+  color: white;
+  background-color: blue;
+  border-color: blue;
+  padding: 0px 1%;
+  border-radius: 5%;
+}
+
+.addexpense{
+  border: 1px solid white;
+  width: max-content;
+  background-color: white;
+  padding: 1%;
+}
+
+.merge{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.split{
+  width: 50%;
+  height: 100%; 
+  aspect-ratio: 1 / 0.8;
+  border: 20px solid white;
+  background-color: rgba(135, 206, 235, 0.8);
+  padding: 5% 0%;
+  justify-content: space-between;
+}
+
+.split input{
+  margin-right: 2px;
+}
+
+h2{
+  background-color: skyblue;
+  color: black;
+  text-align: center;
+  padding: 3px 0;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  border: 0px solid;
+  background-color: white;
+  margin: 1%;
+}
+
+td,th {
+  padding: 0px;
+  text-align: left;
+  border: 1px solid;
+}
+
+th:nth-child(1), th:nth-child(2){
+  width: 50%;
+}
+
+td:nth-child(1), td:nth-child(2){
+  width: 50%;
+}
+
+td:nth-child(3){
+  width: fit-content;
+}
+
+.split2-button{
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.split2-button:hover{
+  background-color: red;
+  border-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 800px) {
+  h1{
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  .merge{
+    display: inline;
+  }
+  .split{
+    width: 100%;
+    
+  }
+  .split input{
+    padding: auto;
+  }
+  .addexpense{
+    width: 80%;
+    padding: 1%;
+  }
+  .footer {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    font-size: large;
+    bottom: 0;
   }
 }
