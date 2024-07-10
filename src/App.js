@@ -3,6 +3,7 @@ import html2canvas from 'html2canvas';
 import Header from './Header';
 import Footer from './Footer';
 import './App.css';
+// import bg1 from './images/bg-1.avif';
 
 const BudgetTracker = () => {
   const [budget, setBudget] = useState('');
@@ -45,24 +46,6 @@ const BudgetTracker = () => {
   const totalExpenses = expenses.reduce((total, expense) => total + expense.amount, 0);
   const remainingBudget = budget - totalExpenses;
 
-  // function downloadTableAsImage() {
-  //   const table = document.getElementById('budgetTable');
-  //   if (!table) {
-  //       console.error('Table not found');
-  //       return;
-  //   }
-
-  //   html2canvas(table).then(canvas => {
-  //       const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-  //       const link = document.createElement('a');
-  //       link.setAttribute('download', 'budget_table.png');
-  //       link.setAttribute('href', image);
-  //       link.click();
-  //   }).catch(error => {
-  //       console.error('Error generating image:', error);
-  //   });
-  // }
-
   function downloadTableAsImage() {
     const table = document.getElementById('budgetTable');
     if (!table) {
@@ -85,14 +68,13 @@ const BudgetTracker = () => {
         console.error('Error generating image:', error);
     });
   }
-
   
 
   return (
     <div>
       <Header />
       <div className='merge'>
-        <div className='split'>
+        <div className='split' style={{backgroundColor:'lightgray'}}>
           <center>
           <form onSubmit={handleAddExpense}>
             <label>
@@ -116,7 +98,8 @@ const BudgetTracker = () => {
           <h3>Total Expenses: &#8377;{totalExpenses}</h3>
           <h3>Remaining Budget: &#8377;{remainingBudget}</h3>
         </div>
-        <div className='split' >
+        <hr/>
+        <div className='split' style={{backgroundColor:'white'}}>
         <center>
           <h4>Expense Tracker Table</h4>
           <table id="budgetTable">
